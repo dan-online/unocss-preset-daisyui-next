@@ -1361,7 +1361,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.19, autoprefixer@npm:^10.4.20":
+"autoprefixer@npm:^10.4.20":
   version: 10.4.20
   resolution: "autoprefixer@npm:10.4.20"
   dependencies:
@@ -2873,7 +2873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parsel-js@npm:^1.1.2":
+"parsel-js@npm:^1.2.1":
   version: 1.2.1
   resolution: "parsel-js@npm:1.2.1"
   checksum: 10c0/f5daf5bc9058d10c4101c0bb126d1e3af8a148757d22e475f520c4e5d970fe884b053e62c15e0730e140751897da79d7dbb577d61691062bd6bdedc5fc18282d
@@ -3306,7 +3306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.3, postcss@npm:^8.4.38, postcss@npm:^8.4.49":
+"postcss@npm:^8.3.3, postcss@npm:^8.4.49":
   version: 8.4.49
   resolution: "postcss@npm:8.4.49"
   dependencies:
@@ -3850,11 +3850,11 @@ __metadata:
     "@types/postcss-js": "npm:^4.0.4"
     "@unocss/core": "npm:^65.4.0"
     "@unocss/reset": "npm:^0.62.3"
-    autoprefixer: "npm:^10.4.19"
+    autoprefixer: "npm:^10.4.20"
     camelcase: "npm:^8.0.0"
     daisyui: "npm:^4.12.23"
-    parsel-js: "npm:^1.1.2"
-    postcss: "npm:^8.4.38"
+    parsel-js: "npm:^1.2.1"
+    postcss: "npm:^8.4.49"
     postcss-js: "npm:^4.0.1"
     typescript: "npm:^5.7.3"
     unbuild: "npm:^3.2.0"

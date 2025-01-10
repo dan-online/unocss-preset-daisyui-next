@@ -41,11 +41,11 @@
 	],
 	"dependencies": {
 		"@unocss/core": "^65.4.0",
-		"autoprefixer": "^10.4.19",
+		"autoprefixer": "^10.4.20",
 		"camelcase": "^8.0.0",
 		"daisyui": "^4.12.23",
-		"parsel-js": "^1.1.2",
-		"postcss": "^8.4.38",
+		"parsel-js": "^1.2.1",
+		"postcss": "^8.4.49",
 		"postcss-js": "^4.0.1"
 	},
 	"devDependencies": {
