@@ -1,0 +1,4 @@
+{
+	"extends": "@sindresorhus/tsconfig",
+	"files": ["src/index.ts", "daisyui.d.ts"]
+}

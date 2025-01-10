@@ -1,0 +1,13 @@
+# Node files
+node_modules
+*.tgz
+
+# Build files
+dist
+
+# Yarn files
+.yarn/install-state.gz
+.yarn/build-state.yml
+
+# direnv
+.envrc

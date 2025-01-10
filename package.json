@@ -1,0 +1,51 @@
+{
+	"name": "unocss-preset-daisyui-next",
+	"version": "0.1.0",
+	"description": "UnoCSS preset updated for daisyUI 4",
+	"scripts": {
+		"prepare": "unbuild",
+		"start": "vite demo --host",
+		"lint": "biome ci src/**/*.ts *.d.ts *.json"
+	},
+	"repository": "@dan-online/unocss-preset-daisyui-next",
+	"license": "MIT",
+	"author": "DanCodes <dan@dancodes.online>",
+	"contributors": [
+		"DanCodes <dan@dancodes.online>",
+		"Adam Matthiesen <https://matthiesen.xyz>"
+	],
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		},
+		"./*": "./*"
+	},
+	"main": "dist/index.mjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": ["*.d.ts", "dist"],
+	"dependencies": {
+		"@unocss/core": "^65.4.0",
+		"autoprefixer": "^10.4.19",
+		"camelcase": "^8.0.0",
+		"daisyui": "^4.12.23",
+		"parsel-js": "^1.1.2",
+		"postcss": "^8.4.38",
+		"postcss-js": "^4.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@iconify/json": "^2.2.294",
+		"@sindresorhus/tsconfig": "^7.0.0",
+		"@types/postcss-js": "^4.0.4",
+		"@unocss/reset": "^0.62.3",
+		"typescript": "^5.7.3",
+		"unbuild": "^3.2.0",
+		"unocss": "^65.4.0",
+		"vite": "^6.0.7"
+	},
+	"packageManager": "yarn@4.6.0"
+}
