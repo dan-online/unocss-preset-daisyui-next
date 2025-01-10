@@ -5,8 +5,8 @@
 	"scripts": {
 		"prepare": "unbuild",
 		"start": "vite demo --host",
-		"lint": "biome ci src/**/*.ts *.d.ts *.json",
-		"check": "biome check src/**/*.ts *.d.ts *.json"
+		"lint": "biome ci src/**/*.ts *.d.ts",
+		"check": "biome check src/**/*.ts *.d.ts"
 	},
 	"repository": "@dan-online/unocss-preset-daisyui-next",
 	"license": "MIT",
@@ -35,7 +35,10 @@
 	"main": "dist/index.mjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
-	"files": ["*.d.ts", "dist"],
+	"files": [
+		"*.d.ts",
+		"dist"
+	],
 	"dependencies": {
 		"@unocss/core": "^65.4.0",
 		"autoprefixer": "^10.4.19",
