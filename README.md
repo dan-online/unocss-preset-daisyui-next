@@ -1,15 +1,15 @@
-# unocss-preset-daisy-next
+# unocss-preset-daisyui-next
 
 > [UnoCSS](https://github.com/unocss/unocss) preset for [daisyUI v4](https://github.com/saadeghi/daisyui)
 
-> Extended from [unocss-preset-daisy](https://github.com/MatthiesenXYZ/unocss-preset-daisyui)
+> Extended from [unocss-preset-daisyui](https://github.com/MatthiesenXYZ/unocss-preset-daisyui)
 
-[Checkout the demo!](https://unocss-preset-daisy-next.pages.dev/)
+[Checkout the demo!](https://unocss-preset-daisyui-next.pages.dev/)
 
 ## Installation
 
 ```sh
-npm install unocss daisyui unocss-preset-daisy-next
+npm install unocss daisyui unocss-preset-daisyui-next
 ```
 
 ## Usage
@@ -63,7 +63,7 @@ To use UnoCSS with Nuxt, `@unocss/nuxt` must be installed as well.
 ```js
 import {defineNuxtConfig } from 'nuxt/config'
 import { presetUno } from 'unocss'
-import { presetDaisy } from '@mattheisenxyz/unocss-preset-daisyui'
+import { presetDaisy } from 'unocss-preset-daisyui-next'
 
 export default defineNuxtConfig({
 	modules: ['@unocss/nuxt'],
