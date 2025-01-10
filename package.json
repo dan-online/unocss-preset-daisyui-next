@@ -5,7 +5,8 @@
 	"scripts": {
 		"prepare": "unbuild",
 		"start": "vite demo --host",
-		"lint": "biome ci src/**/*.ts *.d.ts *.json"
+		"lint": "biome ci src/**/*.ts *.d.ts *.json",
+		"check": "biome check src/**/*.ts *.d.ts *.json"
 	},
 	"repository": "@dan-online/unocss-preset-daisyui-next",
 	"license": "MIT",
