@@ -14,6 +14,14 @@
 		"DanCodes <dan@dancodes.online>",
 		"Adam Matthiesen <https://matthiesen.xyz>"
 	],
+	"keywords": [
+		"unocss",
+		"unocss-preset",
+		"daisyui",
+		"daisyui 4",
+		"tailwindcss",
+		"tailwindcss-preset"
+	],
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
