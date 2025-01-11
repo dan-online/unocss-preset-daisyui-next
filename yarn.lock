@@ -1218,17 +1218,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/reset@npm:65.4.0":
+"@unocss/reset@npm:65.4.0, @unocss/reset@npm:^65.4.0":
   version: 65.4.0
   resolution: "@unocss/reset@npm:65.4.0"
   checksum: 10c0/16df25f582732b63edbb6ff5359efc2f441181bef242fadd0a386addb06f32bf991ac63c5939421c5870742fbb939229bc888533151789f47eb717e9dcbd510a
-  languageName: node
-  linkType: hard
-
-"@unocss/reset@npm:^0.65.4":
-  version: 0.65.4
-  resolution: "@unocss/reset@npm:0.65.4"
-  checksum: 10c0/1bea0b399b5ec6792004b0c1bc34ad6c26b0352f6279b702add57374248dfb36f8530e2a2649d18d4c4ef28c3209ae56a1944b3160fdee9b71e8f1b5c8eaaecd
   languageName: node
   linkType: hard
 
@@ -3849,7 +3842,7 @@ __metadata:
     "@sindresorhus/tsconfig": "npm:^7.0.0"
     "@types/postcss-js": "npm:^4.0.4"
     "@unocss/core": "npm:^65.4.0"
-    "@unocss/reset": "npm:^0.65.4"
+    "@unocss/reset": "npm:^65.4.0"
     autoprefixer: "npm:^10.4.20"
     camelcase: "npm:^8.0.0"
     daisyui: "npm:^4.12.23"
