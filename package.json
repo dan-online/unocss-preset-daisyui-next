@@ -50,13 +50,13 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@iconify/json": "^2.2.294",
+		"@iconify/json": "^2.2.297",
 		"@sindresorhus/tsconfig": "^7.0.0",
 		"@types/postcss-js": "^4.0.4",
-		"@unocss/reset": "^65.4.0",
+		"@unocss/reset": "^65.4.2",
 		"typescript": "^5.7.3",
-		"unbuild": "^3.2.0",
-		"unocss": "^65.4.0",
+		"unbuild": "^3.3.1",
+		"unocss": "^65.4.2",
 		"vite": "^6.0.7"
 	},
 	"packageManager": "yarn@4.6.0"
