@@ -1079,13 +1079,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/core@npm:^65.4.0":
-  version: 65.4.0
-  resolution: "@unocss/core@npm:65.4.0"
-  checksum: 10c0/607838eb288b934c3ed5f58400d477092eddeda8c923e39647175f0e590e7831578f3409be934f2d7b655a59d54d0139ae23d94f6c2234b99559b01045581d12
-  languageName: node
-  linkType: hard
-
 "@unocss/extractor-arbitrary-variants@npm:65.5.0":
   version: 65.5.0
   resolution: "@unocss/extractor-arbitrary-variants@npm:65.5.0"
@@ -1742,15 +1735,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^4.12.23":
-  version: 4.12.23
-  resolution: "daisyui@npm:4.12.23"
+"daisyui@npm:^4.12.24":
+  version: 4.12.24
+  resolution: "daisyui@npm:4.12.24"
   dependencies:
     css-selector-tokenizer: "npm:^0.8"
     culori: "npm:^3"
     picocolors: "npm:^1"
     postcss-js: "npm:^4"
-  checksum: 10c0/7699d294c6193800fc1a0671d67f1a5ea46059cd36702a4326a82c6b0bb823de8ba485aca20beac970ee2a47949c5411df8ea60a40c3e00989d7ce2214e6c196
+  checksum: 10c0/a5865e05b543965c21a934264da2c576f0760137344cb270e2d27183f03c9c51ae1b0af8ebe530fcd31ba4602711d57a5ddbf59c6c9461c53fdd73d53ed61375
   languageName: node
   linkType: hard
 
@@ -3892,13 +3885,13 @@ __metadata:
     "@iconify/json": "npm:^2.2.311"
     "@sindresorhus/tsconfig": "npm:^7.0.0"
     "@types/postcss-js": "npm:^4.0.4"
-    "@unocss/core": "npm:^65.4.0"
+    "@unocss/core": "npm:^65.5.0"
     "@unocss/reset": "npm:^65.5.0"
     autoprefixer: "npm:^10.4.20"
     camelcase: "npm:^8.0.0"
-    daisyui: "npm:^4.12.23"
+    daisyui: "npm:^4.12.24"
     parsel-js: "npm:^1.2.1"
-    postcss: "npm:^8.4.49"
+    postcss: "npm:^8.5.3"
     postcss-js: "npm:^4.0.1"
     typescript: "npm:^5.8.2"
     unbuild: "npm:^3.5.0"
