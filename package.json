@@ -51,10 +51,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@iconify/json": "^2.2.311",
-		"@sindresorhus/tsconfig": "^7.0.0",
+		"@sapphire/ts-config": "^5.0.1",
 		"@types/postcss-js": "^4.0.4",
 		"@unocss/core": "^66.0.0",
+		"culori": "^4.0.1",
 		"typescript": "^5.8.2",
 		"unbuild": "^3.5.0"
 	},

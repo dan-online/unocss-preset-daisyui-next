@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <script type="module">
-	import { defaultThemes } from '..'
+	import allThemes from 'daisyui/theme/object.js'
 
 	const box = document.getElementById("theme-box")
 
-	for (const themeName of defaultThemes) {
+	for (const themeName of Object.keys(allThemes)) {
 		const newTheme = `<div class="border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border outline outline-2 outline-offset-2 outline-transparent"
 			data-set-theme="${themeName}" data-act-class="!outline-base-content">
 			<div data-theme="${themeName}" class="bg-base-100 text-base-content w-full cursor-pointer font-sans">
