@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import unocss from 'unocss/vite'
-import { presetUno, presetIcons } from 'unocss'
-import { presetDaisy } from '..'
+import {  presetIcons, presetWind4 } from 'unocss'
+import { presetDaisy } from 'unocss-preset-daisyui-next';
 
 export default defineConfig({
 	plugins: [
 		unocss({
-			presets: [presetUno(), presetIcons(), presetDaisy({
+			presets: [presetWind4(), presetIcons(), presetDaisy({
 				themes: true
 			})],
 		}),

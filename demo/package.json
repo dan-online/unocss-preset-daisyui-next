@@ -1,0 +1,13 @@
+{
+    "name": "unocss-preset-daisyui-next-demo",
+    "scripts": {
+        "dev": "vite --host"
+    },
+    "type": "module",
+    "devDependencies": {
+        "daisyui": "^4.12.24",
+        "unocss": "^66.1.0-beta.6",
+        "unocss-preset-daisyui-next": "../",
+        "vite": "^6.2.2"
+    }
+}

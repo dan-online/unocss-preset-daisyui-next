@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <script type="module">
-	import { defaultThemes } from '..'
+	import { defaultThemes } from 'unocss-preset-daisyui-next'
 
 	const box = document.getElementById("theme-box")
 
@@ -43,7 +43,7 @@
 	document.querySelectorAll("[data-set-theme]").forEach((el) => {
 		el.addEventListener("click", () => {
 			const themeName = el.getAttribute("data-set-theme")
-			document.documentElement.setAttribute("data-theme", themeName)
+			document.body.setAttribute("data-theme", themeName)
 			document.getElementById("current-theme").textContent = themeName
 		})
 	})
