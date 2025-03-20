@@ -3905,6 +3905,8 @@ __metadata:
     unbuild: "npm:^3.5.0"
     unocss: "npm:^66.0.0"
     vite: "npm:^6.2.0"
+  peerDependencies:
+    "@unocss/core": ^65.4.0
   languageName: unknown
   linkType: soft
 
