@@ -2279,18 +2279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:4":
-  version: 4.12.24
-  resolution: "daisyui@npm:4.12.24"
-  dependencies:
-    css-selector-tokenizer: "npm:^0.8"
-    culori: "npm:^3"
-    picocolors: "npm:^1"
-    postcss-js: "npm:^4"
-  checksum: 10c0/a5865e05b543965c21a934264da2c576f0760137344cb270e2d27183f03c9c51ae1b0af8ebe530fcd31ba4602711d57a5ddbf59c6c9461c53fdd73d53ed61375
-  languageName: node
-  linkType: hard
-
 "daisyui@npm:^4.12.23":
   version: 4.12.23
   resolution: "daisyui@npm:4.12.23"
@@ -2300,6 +2288,18 @@ __metadata:
     picocolors: "npm:^1"
     postcss-js: "npm:^4"
   checksum: 10c0/7699d294c6193800fc1a0671d67f1a5ea46059cd36702a4326a82c6b0bb823de8ba485aca20beac970ee2a47949c5411df8ea60a40c3e00989d7ce2214e6c196
+  languageName: node
+  linkType: hard
+
+"daisyui@npm:^4.12.24":
+  version: 4.12.24
+  resolution: "daisyui@npm:4.12.24"
+  dependencies:
+    css-selector-tokenizer: "npm:^0.8"
+    culori: "npm:^3"
+    picocolors: "npm:^1"
+    postcss-js: "npm:^4"
+  checksum: 10c0/a5865e05b543965c21a934264da2c576f0760137344cb270e2d27183f03c9c51ae1b0af8ebe530fcd31ba4602711d57a5ddbf59c6c9461c53fdd73d53ed61375
   languageName: node
   linkType: hard
 
@@ -4467,7 +4467,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "unocss-preset-daisyui-next-demo@workspace:demo"
   dependencies:
-    daisyui: "npm:4"
+    daisyui: "npm:^4.12.24"
     unocss: "npm:^66.1.0-beta.6"
     unocss-preset-daisyui-next: ../
     vite: "npm:^6.2.2"
@@ -4476,7 +4476,7 @@ __metadata:
 
 "unocss-preset-daisyui-next@file:../::locator=unocss-preset-daisyui-next-demo%40workspace%3Ademo":
   version: 0.1.1
-  resolution: "unocss-preset-daisyui-next@file:../#../::hash=bd8072&locator=unocss-preset-daisyui-next-demo%40workspace%3Ademo"
+  resolution: "unocss-preset-daisyui-next@file:../#../::hash=ef125f&locator=unocss-preset-daisyui-next-demo%40workspace%3Ademo"
   dependencies:
     autoprefixer: "npm:^10.4.20"
     camelcase: "npm:^8.0.0"
@@ -4486,7 +4486,7 @@ __metadata:
     postcss-js: "npm:^4.0.1"
   peerDependencies:
     "@unocss/core": ^65.4.0
-  checksum: 10c0/42caa9cb6c7c82d8e1b0970241b2633ad4e3ddcc9f81adb4761cd4cf444857e4ec6b68250d6ce5e44f86eb1c7b09fc020e07622b885a771f49f81f97a0a5c072
+  checksum: 10c0/11ec1e3cd8b76ce6aaf8f4b56be4582a013030bca1ef69f95de3f7d9b8176d19912296f77e51b4c17af816640853ba89a57bccca65632deb22d5ad6a7cf047e8
   languageName: node
   linkType: hard
 
