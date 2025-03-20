@@ -40,7 +40,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@unocss/core": "^65.4.0",
+		"@unocss/core": "^66.0.0",
 		"autoprefixer": "^10.4.20",
 		"camelcase": "^8.0.0",
 		"daisyui": "^4.12.23",
@@ -53,10 +53,10 @@
 		"@iconify/json": "^2.2.311",
 		"@sindresorhus/tsconfig": "^7.0.0",
 		"@types/postcss-js": "^4.0.4",
-		"@unocss/reset": "^65.5.0",
+		"@unocss/reset": "^66.0.0",
 		"typescript": "^5.8.2",
 		"unbuild": "^3.5.0",
-		"unocss": "^65.5.0",
+		"unocss": "^66.0.0",
 		"vite": "^6.2.0"
 	},
 	"packageManager": "yarn@4.7.0"
