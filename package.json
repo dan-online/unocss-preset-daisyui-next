@@ -48,6 +48,7 @@
 	"dependencies": {
 		"autoprefixer": "^10.4.20",
 		"camelcase": "^8.0.0",
+		"culori": "^4.0.1",
 		"daisyui": "^5.0.9",
 		"parsel-js": "^1.2.1",
 		"postcss": "^8.4.49",
@@ -60,7 +61,6 @@
 		"@types/node": "^22.13.11",
 		"@types/postcss-js": "^4.0.4",
 		"@unocss/core": "^66.0.0",
-		"culori": "^4.0.1",
 		"typescript": "^5.8.2",
 		"unbuild": "^3.5.0"
 	},
