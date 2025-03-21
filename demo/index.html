@@ -7,6 +7,9 @@
 <script type="module">
 	import { themes } from '../dist/colors'
 
+	import '@unocss/reset/tailwind.css'
+	import 'uno.css'
+
 	const box = document.getElementById("theme-box")
 
 	for (const themeName of themes) {
@@ -385,7 +388,6 @@
 		</div>
 	</div>
 
-	<!-- Modal -->
 	<input type="checkbox" id="my-modal" class="modal-toggle" />
 	<div class="modal">
 		<div class="modal-box rounded-box">
@@ -399,9 +401,4 @@
 			</div>
 		</div>
 	</div>
-
-	<script type="module">
-		import '@unocss/reset/tailwind.css'
-		import 'uno.css'
-	</script>
 </body>
