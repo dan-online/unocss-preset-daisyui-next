@@ -1,19 +1,19 @@
 import type { DynamicRule, Preflight, Preset } from "@unocss/core";
 import autoprefixer from "autoprefixer";
 import camelCase from "camelcase";
-import base from "daisyui/dist/base.js";
-import styled from "daisyui/dist/styled.js";
-import unstyled from "daisyui/dist/unstyled.js";
-import utilitiesStyled from "daisyui/dist/utilities-styled.js";
-import utilitiesUnstyled from "daisyui/dist/utilities-unstyled.js";
-import utilities from "daisyui/dist/utilities.js";
-import utilityClasses from "daisyui/src/lib/utility-classes.js";
-import colorFunctions from "daisyui/src/theming/functions.js";
-import colors from "daisyui/src/theming/index.js";
-import allThemes from "daisyui/src/theming/themes.js";
+
+import {
+	type CssInJs,
+	allThemes,
+	convertColorFormat,
+	getDaisyUIObjects,
+	themeDefaults,
+	variables,
+} from "./utils";
+
 import { type ClassToken, tokenize } from "parsel-js";
 import postcss, { type Rule, type ChildNode } from "postcss";
-import { type CssInJs, parse } from "postcss-js";
+import { parse } from "postcss-js";
 
 const processor = postcss(autoprefixer);
 const process = (object: CssInJs) =>
@@ -32,9 +32,118 @@ const defaultOptions = {
 	darkTheme: "dark",
 };
 
-export const defaultThemes = Object.keys(allThemes);
+const injectThemes = (
+	addBase: (themes: unknown) => void,
+	config: (key: string) => unknown,
+	themes: Record<string, Record<string, string>>,
+) => {
+	const includedThemesObj: Record<string, Record<string, string> | false> = {};
+	// add default themes
+	const themeRoot = (config("daisyui.themeRoot") as string) ?? ":root";
+	for (const [theme, value] of Object.entries(themes)) {
+		includedThemesObj[theme] = convertColorFormat(
+			value as Record<string, string>,
+		);
+	}
 
-export const presetDaisy = (o: Partial<typeof defaultOptions> = {}): Preset => {
+	// add custom themes
+	if (Array.isArray(config("daisyui.themes"))) {
+		for (const item of config("daisyui.themes") as Array<
+			string | Record<string, Record<string, string>>
+		>) {
+			if (typeof item === "object" && item !== null) {
+				for (const [customThemeName, customThemevalue] of Object.entries(
+					item,
+				)) {
+					includedThemesObj[customThemeName] = convertColorFormat(
+						customThemevalue as Record<string, string>,
+					);
+				}
+			}
+		}
+	}
+
+	let themeOrder = [];
+	if (Array.isArray(config("daisyui.themes"))) {
+		for (const theme of config("daisyui.themes") as Array<
+			string | Record<string, Record<string, string>>
+		>) {
+			if (typeof theme === "object" && theme !== null) {
+				for (const customThemeName of Object.keys(theme)) {
+					themeOrder.push(customThemeName);
+				}
+			} else if (theme in includedThemesObj) {
+				themeOrder.push(theme);
+			}
+		}
+	} else if (config("daisyui.themes") === true) {
+		themeOrder = themeDefaults.themeOrder;
+	} else {
+		themeOrder = ["light", "dark"];
+	}
+
+	// inject themes in order
+	const themesToInject: Record<string, unknown> = {};
+	themeOrder.forEach((themeName, index) => {
+		if (index === 0) {
+			// first theme as root
+			themesToInject[themeRoot] = includedThemesObj[themeName];
+		} else if (index === 1) {
+			// auto dark
+			if (config("daisyui.darkTheme")) {
+				if (
+					themeOrder[0] !== config("daisyui.darkTheme") &&
+					themeOrder.includes(config("daisyui.darkTheme") as string)
+				) {
+					themesToInject["@media (prefers-color-scheme: dark)"] = {
+						[themeRoot]: includedThemesObj[`${config("daisyui.darkTheme")}`],
+					};
+				}
+			} else if (config("daisyui.darkTheme") === false) {
+				// disables prefers-color-scheme: dark
+			} else {
+				if (themeOrder[0] !== "dark" && themeOrder.includes("dark")) {
+					themesToInject["@media (prefers-color-scheme: dark)"] = {
+						[themeRoot]: includedThemesObj["dark"],
+					};
+				}
+			}
+			// theme 0 with name
+			themesToInject[`[data-theme=${themeOrder[0]}]`] =
+				includedThemesObj[themeOrder[0]!];
+			themesToInject[
+				`${themeRoot}:has(input.theme-controller[value=${themeOrder[0]}]:checked)`
+			] = includedThemesObj[themeOrder[0]!];
+			// theme 1 with name
+			themesToInject[`[data-theme=${themeOrder[1]}]`] =
+				includedThemesObj[themeOrder[1]!];
+			themesToInject[
+				`${themeRoot}:has(input.theme-controller[value=${themeOrder[1]}]:checked)`
+			] = includedThemesObj[themeOrder[1]!];
+		} else {
+			themesToInject[`[data-theme=${themeName}]`] =
+				includedThemesObj[themeName];
+			themesToInject[
+				`${themeRoot}:has(input.theme-controller[value=${themeName}]:checked)`
+			] = includedThemesObj[themeName];
+		}
+	});
+
+	addBase(themesToInject);
+
+	return {
+		includedThemesObj,
+		themeOrder,
+	};
+};
+
+export const presetDaisy = async (
+	o: Partial<typeof defaultOptions> = {},
+): Promise<Preset> => {
+	const base = await getDaisyUIObjects("base");
+	const utilities = await getDaisyUIObjects("utilities");
+	const components = await getDaisyUIObjects("components");
+
 	const options = { ...defaultOptions, ...o };
 
 	const rules = new Map<string, string>();
@@ -44,10 +153,12 @@ export const presetDaisy = (o: Partial<typeof defaultOptions> = {}): Preset => {
 	};
 	const nodes: Rule[] = [];
 
-	const styles = [options.styled ? styled : unstyled];
-	if (options.utils) {
-		styles.push(utilities, utilitiesUnstyled, utilitiesStyled);
-	}
+	// const styles = [options.styled ? styled : unstyled];
+	const styles = options.styled ? Object.values(components) : [];
+	// console.log(styles)
+	// if (options.utils) {
+	// 	styles.push(...Object.values(utilities));
+	// }
 
 	const categorizeRules = (node: ChildNode) => {
 		if (node.type === "rule") {
@@ -116,10 +227,10 @@ export const presetDaisy = (o: Partial<typeof defaultOptions> = {}): Preset => {
 		});
 	}
 
-	colorFunctions.injectThemes(
+	injectThemes(
 		(theme) => {
 			preflights.push({
-				getCSS: () => process(theme).css,
+				getCSS: () => replacePrefix(process(theme as CssInJs).css),
 				layer: "daisy-themes",
 			});
 		},
@@ -137,30 +248,39 @@ export const presetDaisy = (o: Partial<typeof defaultOptions> = {}): Preset => {
 		allThemes,
 	);
 
+	if (options.utils) {
+		for (const util of Object.values(utilities)) {
+			preflights.push({
+				getCSS: () => replacePrefix(process(util).css),
+				layer: "daisy-utilities",
+			});
+		}
+	}
+
 	return {
-		name: "unocss-preset-daisy",
+		name: "unocss-preset-daisyui-next",
 		preflights,
 		theme: {
 			colors: {
 				...Object.fromEntries(
-					Object.entries(colors)
+					Object.entries(variables.colors)
 						.filter(
 							([color]) =>
 								// Already in @unocss/preset-mini
 								// https://github.com/unocss/unocss/blob/0f7efcba592e71d81fbb295332b27e6894a0b4fa/packages/preset-mini/src/_theme/colors.ts#L11-L12
-								!["transparent", "current"].includes(color) &&
+								// !["transparent", "current"].includes(color) && // Removed in daisyui v5
 								// Added below
 								!color.startsWith("base"),
 						)
 						.map(([color, value]) => [camelCase(color), value]),
 				),
 				base: Object.fromEntries(
-					Object.entries(colors)
+					Object.entries(variables.colors)
 						.filter(([color]) => color.startsWith("base"))
 						.map(([color, value]) => [color.replace("base-", ""), value]),
 				),
 			},
-			...utilityClasses,
+			// ...utilities,
 		},
 		rules: [...rules].map(
 			([base, rule]) =>

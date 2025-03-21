@@ -1,6 +1,10 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   lint:
@@ -17,5 +21,25 @@ jobs:
         with:
           node-version: 22
           cache: yarn
+
       - run: yarn install --immutable
       - run: yarn lint
+  
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: corepack enable
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          
+      - run: yarn install --immutable
+      - run: yarn prepare
+      - run: yarn workspace unocss-preset-daisyui-next-demo vite build

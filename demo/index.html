@@ -5,37 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <script type="module">
-	import { defaultThemes } from '..'
+	import { themes } from '../dist/colors'
+
+	import '@unocss/reset/tailwind.css'
+	import 'uno.css'
 
 	const box = document.getElementById("theme-box")
 
-	for (const themeName of defaultThemes) {
-		const newTheme = `<div class="border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border outline outline-2 outline-offset-2 outline-transparent"
-			data-set-theme="${themeName}" data-act-class="!outline-base-content">
-			<div data-theme="${themeName}" class="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+	for (const themeName of themes) {
+		const newTheme = `<div class="border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border outline-2 outline-offset-2 outline-transparent" data-act-class="outline-base-content!" data-set-theme="${themeName}">
+			<div class="bg-base-100 text-base-content w-full cursor-pointer font-sans" data-theme="${themeName}">
 				<div class="grid grid-cols-5 grid-rows-3">
-					<div class="bg-base-200 col-start-1 row-span-2 row-start-1"></div>
-					<div class="bg-base-300 col-start-1 row-start-3"></div>
-					<div class="bg-base-100 col-span-4 col-start-2 row-span-3 row-start-1 flex flex-col gap-1 p-2">
-						<div class="font-bold">${themeName}</div>
-						<div class="flex flex-wrap gap-1">
-							<div class="bg-primary flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-								<div class="text-primary-content text-sm font-bold">A</div>
-							</div>
-							<div class="bg-secondary flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-								<div class="text-secondary-content text-sm font-bold">A</div>
-							</div>
-							<div class="bg-accent flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-								<div class="text-accent-content text-sm font-bold">A</div>
-							</div>
-							<div class="bg-neutral flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-								<div class="text-neutral-content text-sm font-bold">A</div>
-							</div>
-						</div>
+				<div class="bg-base-200 col-start-1 row-span-2 row-start-1"></div>
+				<div class="bg-base-300 col-start-1 row-start-3"></div>
+				<div class="bg-base-100 col-span-4 col-start-2 row-span-3 row-start-1 flex flex-col gap-1 p-2">
+					<div class="font-bold">${themeName}</div>
+					<div class="flex flex-wrap gap-1">
+					<div class="bg-primary flex aspect-square w-5 items-center justify-center rounded lg:w-6">
+						<div class="text-primary-content text-sm font-bold">A</div>
+					</div>
+					<div class="bg-secondary flex aspect-square w-5 items-center justify-center rounded lg:w-6">
+						<div class="text-secondary-content text-sm font-bold">A</div>
+					</div>
+					<div class="bg-accent flex aspect-square w-5 items-center justify-center rounded lg:w-6">
+						<div class="text-accent-content text-sm font-bold">A</div>
+					</div>
+					<div class="bg-neutral flex aspect-square w-5 items-center justify-center rounded lg:w-6">
+						<div class="text-neutral-content text-sm font-bold">A</div>
+					</div>
 					</div>
 				</div>
+				</div>
 			</div>
-		</div>`
+			</div>`
 
 		box.innerHTML += newTheme
 	}
@@ -49,7 +51,8 @@
 	})
 </script>
 
-<body class="max-w-screen-lg mx-auto p-4 flex flex-col gap-4">
+
+<body class="bg-base-100 max-w-screen-lg mx-auto p-4 flex flex-col gap-4">
 	<div class="flex items-center">
 		<h1 class="text-5xl font-300 mr-4">UnoCSS + daisyUI</h1>
 		<a class="mt-2" href="https://github.com/dan-online/unocss-preset-daisyui-next">
@@ -370,10 +373,10 @@
 
 	<div>
 		<h3 class="font-bold mb-2 text-xl">Phone</h3>
-		<div class="mockup-phone">
-			<div class="camera"></div>
-			<div class="display">
-				<div class="artboard artboard-demo phone-1">Android</div>
+		<div class="mockup-phone border-primary">
+			<div class="mockup-phone-camera"></div>
+			<div class="mockup-phone-display">
+				<img alt="wallpaper" src="https://placecats.com/400/1200" />
 			</div>
 		</div>
 	</div>
@@ -381,11 +384,10 @@
 	<div>
 		<h3 class="font-bold mb-2 text-xl">Window</h3>
 		<div class="mockup-window border bg-base-300">
-			<div class="flex justify-center px-4 py-16 bg-base-200">Linux</div>
+			<div class="flex justify-center px-4 py-16 bg-base-200">Very window</div>
 		</div>
 	</div>
 
-	<!-- Modal -->
 	<input type="checkbox" id="my-modal" class="modal-toggle" />
 	<div class="modal">
 		<div class="modal-box rounded-box">
@@ -399,9 +401,4 @@
 			</div>
 		</div>
 	</div>
-
-	<script type="module">
-		import '@unocss/reset/tailwind.css'
-		import 'uno.css'
-	</script>
 </body>
