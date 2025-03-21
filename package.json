@@ -44,7 +44,7 @@
 	"dependencies": {
 		"autoprefixer": "^10.4.21",
 		"camelcase": "^8.0.0",
-		"daisyui": "^4.12.24",
+		"daisyui": "^5.0.9",
 		"parsel-js": "^1.2.1",
 		"postcss": "^8.5.3",
 		"postcss-js": "^4.0.1"
