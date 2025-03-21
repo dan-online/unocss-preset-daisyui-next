@@ -1077,7 +1077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/reset@npm:66.0.0, @unocss/reset@npm:^66.0.0":
+"@unocss/reset@npm:66.0.0":
   version: 66.0.0
   resolution: "@unocss/reset@npm:66.0.0"
   checksum: 10c0/df58120e13179a6596b6704e79ee3f2e6e6250a60fb414a8a148f529edbc3db22e677e53e411cf8634f2e1af502aa6b04474fdceedee78b63403aaff030c4117
@@ -3646,7 +3646,6 @@ __metadata:
     "@sindresorhus/tsconfig": "npm:^7.0.0"
     "@types/postcss-js": "npm:^4.0.4"
     "@unocss/core": "npm:^66.0.0"
-    "@unocss/reset": "npm:^66.0.0"
     autoprefixer: "npm:^10.4.20"
     camelcase: "npm:^8.0.0"
     daisyui: "npm:^4.12.23"
@@ -3656,7 +3655,7 @@ __metadata:
     typescript: "npm:^5.8.2"
     unbuild: "npm:^3.5.0"
   peerDependencies:
-    "@unocss/core": ^65.4.0
+    "@unocss/core": ^66.0.0
   languageName: unknown
   linkType: soft
 
