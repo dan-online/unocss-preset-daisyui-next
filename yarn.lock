@@ -1213,7 +1213,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.20":
+"autoprefixer@npm:^10.4.20, autoprefixer@npm:^10.4.21":
   version: 10.4.21
   resolution: "autoprefixer@npm:10.4.21"
   dependencies:
@@ -1610,7 +1610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^4.12.23, daisyui@npm:^4.12.24":
+"daisyui@npm:^4.12.24":
   version: 4.12.24
   resolution: "daisyui@npm:4.12.24"
   dependencies:
@@ -3646,11 +3646,11 @@ __metadata:
     "@sindresorhus/tsconfig": "npm:^7.0.0"
     "@types/postcss-js": "npm:^4.0.4"
     "@unocss/core": "npm:^66.0.0"
-    autoprefixer: "npm:^10.4.20"
+    autoprefixer: "npm:^10.4.21"
     camelcase: "npm:^8.0.0"
-    daisyui: "npm:^4.12.23"
+    daisyui: "npm:^4.12.24"
     parsel-js: "npm:^1.2.1"
-    postcss: "npm:^8.4.49"
+    postcss: "npm:^8.5.3"
     postcss-js: "npm:^4.0.1"
     typescript: "npm:^5.8.2"
     unbuild: "npm:^3.5.0"
