@@ -2,7 +2,14 @@ import type { DynamicRule, Preflight, Preset } from "@unocss/core";
 import autoprefixer from "autoprefixer";
 import camelCase from "camelcase";
 
-import { allThemes, convertColorFormat, type CssInJs, getDaisyUIObjects, themeDefaults, variables } from "./utils";
+import {
+	type CssInJs,
+	allThemes,
+	convertColorFormat,
+	getDaisyUIObjects,
+	themeDefaults,
+	variables,
+} from "./utils";
 
 import { type ClassToken, tokenize } from "parsel-js";
 import postcss, { type Rule, type ChildNode } from "postcss";

@@ -7,9 +7,9 @@ import { type Oklch, interpolate, oklch } from "culori";
 import variables from "daisyui/functions/variables.js";
 import { allThemes } from "./colors";
 
- const colorNames = variables.colors;
+const colorNames = variables.colors;
 
- type CssInJs = {
+type CssInJs = {
 	[x: string]: unknown;
 };
 
@@ -34,7 +34,6 @@ const getDaisyUIObjects = async (type: string) => {
 
 	return content;
 };
-
 
 const colorObjToString = (colorObj: Oklch) =>
 	`${colorObj.l} ${colorObj.c} ${colorObj.h}`;
@@ -193,5 +192,12 @@ const convertColorFormat = (input: Record<string, string>) => {
 	return resultObj;
 };
 
-export { variables, allThemes, getDaisyUIObjects, convertColorFormat, colorNames, themeDefaults };
+export {
+	variables,
+	allThemes,
+	getDaisyUIObjects,
+	convertColorFormat,
+	colorNames,
+	themeDefaults,
+};
 export type { CssInJs };
