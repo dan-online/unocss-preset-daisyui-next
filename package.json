@@ -55,12 +55,11 @@
 		"@sindresorhus/tsconfig": "^7.0.0",
 		"@types/postcss-js": "^4.0.4",
 		"@unocss/core": "^66.0.0",
-		"@unocss/reset": "^66.0.0",
 		"typescript": "^5.8.2",
 		"unbuild": "^3.5.0"
 	},
 	"peerDependencies": {
-		"@unocss/core": "^65.4.0"
+		"@unocss/core": "^66.0.0"
 	},
 	"packageManager": "yarn@4.7.0"
 }
