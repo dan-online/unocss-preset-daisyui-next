@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import unocss from 'unocss/vite'
-import {  presetIcons, presetWind3 } from 'unocss'
+import { presetIcons, presetWind3 } from 'unocss'
 import { presetDaisy } from '..';
 
 export default defineConfig({

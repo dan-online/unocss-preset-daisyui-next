@@ -18,7 +18,7 @@
 		"unocss",
 		"unocss-preset",
 		"daisyui",
-		"daisyui 4",
+		"daisyui 5",
 		"tailwindcss",
 		"tailwindcss-preset"
 	],
@@ -44,7 +44,7 @@
 	"dependencies": {
 		"autoprefixer": "^10.4.20",
 		"camelcase": "^8.0.0",
-		"daisyui": "^4.12.23",
+		"daisyui": "^5.0.9",
 		"parsel-js": "^1.2.1",
 		"postcss": "^8.4.49",
 		"postcss-js": "^4.0.1"
