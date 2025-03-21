@@ -43,7 +43,7 @@
 	document.querySelectorAll("[data-set-theme]").forEach((el) => {
 		el.addEventListener("click", () => {
 			const themeName = el.getAttribute("data-set-theme")
-			document.body.setAttribute("data-theme", themeName)
+			document.documentElement.setAttribute("data-theme", themeName)
 			document.getElementById("current-theme").textContent = themeName
 		})
 	})
