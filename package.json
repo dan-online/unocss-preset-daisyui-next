@@ -1,6 +1,6 @@
 {
 	"name": "unocss-preset-daisyui-next",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "UnoCSS preset updated for daisyUI 4",
 	"scripts": {
 		"prepare": "unbuild",
